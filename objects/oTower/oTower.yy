@@ -25,7 +25,7 @@
     "path": "folders/Objects/Cards, Towers and Tiles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oPath_start",
+  "name": "oTower",
   "tags": [],
   "resourceType": "GMObject",
 }

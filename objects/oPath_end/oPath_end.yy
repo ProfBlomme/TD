@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Cards, Towers and Tiles",
+    "path": "folders/Objects/Cards, Towers and Tiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPath_end",

@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sPath_2",
-    "path": "sprites/sPath_2/sPath_2.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -21,14 +18,13 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Cards, Towers and Tiles",
+    "path": "folders/Objects/Cards, Towers and Tiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "oCard",
