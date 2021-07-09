@@ -1,4 +1,8 @@
 
+if keyboard_check_pressed(vk_escape)
+{
+	game_end(); 	
+}
 
 if card_playing == noone
 {
@@ -23,6 +27,12 @@ if card_playing == noone
 			
 			card_playing.y -= 50; 
 			object_placing = instance_create_layer(mouse_x, mouse_y, "Instances", oTile); 
+			
+			object_placing.connect_right = card_playing.connect_right; 
+			object_placing.connect_left = card_playing.connect_left; 
+			object_placing.connect_up = card_playing.connect_up; 
+			object_placing.connect_down = card_playing.connect_down; 
+			
 			object_placing.sprite_index = card_playing.sprite_index; 
 			object_placing.being_placed = true; 
 			
@@ -47,13 +57,21 @@ if card_playing == noone
 		if ds_grid_get(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE)) == 0
 		{
 			
-			ds_grid_add(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE), object_placing);
+			//Check adjacent tiles
+			if check_tile_placement() 
+			{
+				//Place the tile 
+				ds_grid_add(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE), object_placing);
 			
-			object_placing.being_placed = false; 
-			instance_destroy(card_playing);
+				object_placing.being_placed = false; 
+				instance_destroy(card_playing);
 			
-			card_playing = noone; 
-			object_placing = noone;
+				card_playing = noone; 
+				object_placing = noone;
+			} else {
+				show_debug_message("Adjacent cell blocking"); 
+			}
+			
 			
 		} else {
 			show_debug_message("Cell blocked"); 
