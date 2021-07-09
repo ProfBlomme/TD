@@ -32,7 +32,6 @@ if card_playing == noone
 	//Card is being played 
 } else {
 	
-	
 	//Cancel the card being played
 	if mouse_check_button_pressed(mb_right)
 	{
@@ -41,49 +40,32 @@ if card_playing == noone
 		instance_destroy(object_placing);
 		object_placing = noone; 
 		
-	}
-	
-	
-}
-
-
-
-
-
-
-
-/*
-//Playing a card from hand 
-if card_selected != noone
-{
-	
-	
-	
-	//No card selected for play
-} else if card_selected = noone {
-	if mouse_check_button_pressed(mb_left)
+	//Place the object (Card being played) 
+	} else if mouse_check_button_pressed(mb_left) 
 	{
-		//Click on a card in hand 
-		if collision_point(mouse_x, mouse_y, oCard, false, false)
+		//Check the cell_grid for blocking
+		if ds_grid_get(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE)) == 0
 		{
-			card_selected = other.id;
-			card_selected.y -= 100; 
-
-
-
+			
+			ds_grid_add(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE), object_placing);
+			
+			object_placing.being_placed = false; 
+			instance_destroy(card_playing);
+			
+			card_playing = noone; 
+			object_placing = noone;
+			
+		} else {
+			show_debug_message("Cell blocked"); 
 		}
-
 		
-	}
-
+			
+	}	
 }
 
 /*
-if dragging_card 
-{
-	if mouse_check_button_pressed(mb_left)
-	{
-	
+
+
 		//Check the grid 
 		if mp_grid_get_cell(path_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE)) != -1 
 		{
@@ -116,6 +98,9 @@ if dragging_card
 	
 		//Cell occupied
 		} else {show_debug_message("Cell occupied"); }
-	}
-		
-} 
+
+
+
+
+
+
