@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPath_start",
-    "path": "sprites/sPath_start/sPath_start.yy",
+    "name": "sButton_Endturn",
+    "path": "sprites/sButton_Endturn/sButton_Endturn.yy",
   },
   "solid": false,
   "visible": true,
@@ -20,17 +20,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Cards, Towers and Tiles",
-    "path": "folders/Objects/Cards, Towers and Tiles.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oPath_start",
+  "name": "oButton",
   "tags": [],
   "resourceType": "GMObject",
 }

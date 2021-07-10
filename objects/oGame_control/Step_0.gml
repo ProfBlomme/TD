@@ -16,6 +16,18 @@ if card_playing == noone
 			card_hovering = noone;
 		}
 	}
+	
+	//Click the end turn button 
+	if position_meeting(mouse_x, mouse_y, oButton) == true 
+	{
+		if mouse_check_button_pressed(mb_left) 
+		{
+			phase = phasetype.invasion; 	
+		}
+	}
+	
+	
+	
 
 	//Play the hovered card 
 	if (card_hovering != noone)
@@ -34,10 +46,10 @@ if card_playing == noone
 			object_placing.connect_down = card_playing.connect_down; 
 			
 			object_placing.sprite_index = card_playing.sprite_index; 
-			object_placing.being_placed = true; 
-			
+			object_placing.being_placed = true; 	
 		}
-	}
+	} 
+	
 	
 	//Card is being played 
 } else {
@@ -61,7 +73,21 @@ if card_playing == noone
 			if check_tile_placement() 
 			{
 				//Place the tile 
-				ds_grid_add(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE), object_placing);
+				var _x = floor(mouse_x/CELL_SIZE);
+				var _y = floor(mouse_y/CELL_SIZE);
+				ds_grid_add(cell_grid, _x, _y, object_placing);
+				mp_grid_clear_cell(path_grid, _x, _y);
+				
+				//Check for connection to the path end 
+				ai_path = path_add();
+				if mp_grid_path(path_grid, ai_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), _x*CELL_SIZE+(CELL_SIZE/2), _y*CELL_SIZE+(CELL_SIZE/2), false) 
+				{
+					show_debug_message("Connected"); 	
+					oPath_start.x = _x*CELL_SIZE; 
+					oPath_start.y = _y*CELL_SIZE; 
+					
+				} else { show_debug_message("Not connected"); }
+				
 			
 				object_placing.being_placed = false; 
 				instance_destroy(card_playing);
@@ -81,41 +107,19 @@ if card_playing == noone
 	}	
 }
 
-/*
 
 
-		//Check the grid 
-		if mp_grid_get_cell(path_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE)) != -1 
-		{
-		
-			//Check adjacent right cell
-			var _check_right = ds_grid_get(cell_grid, floor((mouse_x+CELL_SIZE)/CELL_SIZE), floor(mouse_y/CELL_SIZE));
-		
-			if _check_right = 0
-			{
-				var _tile = instance_create_layer(floor(mouse_x/CELL_SIZE)*CELL_SIZE, floor(mouse_y/CELL_SIZE)*CELL_SIZE, "Instances", oCard); 
-				mp_grid_add_cell(path_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE));
-			
-				ds_grid_add(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE), _tile);
-				show_debug_message("Tile placed: "+string(_tile));
-			
-				//There is a tile on the right side
-			} else if _check_right.connect_left
-			{
-				var _tile = instance_create_layer(floor(mouse_x/CELL_SIZE)*CELL_SIZE, floor(mouse_y/CELL_SIZE)*CELL_SIZE, "Instances", oCard); 
-				mp_grid_add_cell(path_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE));
-			
-				ds_grid_add(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE), _tile);
-				show_debug_message("Tile placed: "+string(_tile));
-			
-			
-
-			} else {
-				show_debug_message("Adjacent right cell occupied"); 
-			}
+//Spawn invaders
+if (phase == phasetype.invasion) or mouse_check_button_pressed(mb_right)
+{
+	var _enemy = instance_create_layer(oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), "Enemies", oEnemy);
+	show_debug_message(string(oPath_start.x)+" "+string(oPath_start.y));
 	
-		//Cell occupied
-		} else {show_debug_message("Cell occupied"); }
+	//Return to build phase
+	phase = phasetype.build; 
+}
+
+
 
 
 

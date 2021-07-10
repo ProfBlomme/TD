@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPath_start",
-    "path": "sprites/sPath_start/sPath_start.yy",
+    "name": "sEnemy1",
+    "path": "sprites/sEnemy1/sEnemy1.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,6 +21,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
@@ -30,7 +31,7 @@
     "path": "folders/Objects/Cards, Towers and Tiles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oPath_start",
+  "name": "oEnemy",
   "tags": [],
   "resourceType": "GMObject",
 }
