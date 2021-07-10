@@ -8,7 +8,9 @@ enum phasetype
 
 phase = phasetype.build; 
 
-
+wave_count = 5; 
+enemies_spawned = 0; 
+spawn_timer = 0; 
 
 card_hovering = noone; 
 card_playing = noone;
@@ -48,5 +50,6 @@ mp_grid_path(path_grid, ai_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SI
 deck_setup(); 
 hand_setup(); 
 card_draw(); 
+
 
 

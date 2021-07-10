@@ -1,6 +1,6 @@
 
 
-draw_text(10, 10, instance_number(oEnemy));
+draw_text(10, 10,"Enemies left :"+ string(instance_number(oEnemy)));
 
 
 

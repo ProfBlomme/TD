@@ -79,15 +79,26 @@ if card_playing == noone
 				mp_grid_clear_cell(path_grid, _x, _y);
 				
 				//Check for connection to the path end 
-				ai_path = path_add();
-				if mp_grid_path(path_grid, ai_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), _x*CELL_SIZE+(CELL_SIZE/2), _y*CELL_SIZE+(CELL_SIZE/2), false) 
+				check_path = path_add();
+				if mp_grid_path(path_grid, check_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), _x*CELL_SIZE+(CELL_SIZE/2), _y*CELL_SIZE+(CELL_SIZE/2), false) 
 				{
+
+					
+					mp_grid_path(path_grid, ai_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), _x*CELL_SIZE+(CELL_SIZE/2), _y*CELL_SIZE+(CELL_SIZE/2), false) 
 					show_debug_message("Connected"); 	
 					oPath_start.x = _x*CELL_SIZE; 
 					oPath_start.y = _y*CELL_SIZE; 
 					
 				} else { show_debug_message("Not connected"); }
 				
+				for(i=1; i<=5; i++)
+				{
+					if hand[i] == card_playing
+					{
+						hand[i] = noone; 
+						break; 
+					}
+				}
 			
 				object_placing.being_placed = false; 
 				instance_destroy(card_playing);
@@ -110,18 +121,56 @@ if card_playing == noone
 
 
 //Spawn invaders
-if (phase == phasetype.invasion) or mouse_check_button_pressed(mb_right)
+if (phase == phasetype.invasion) 
 {
-	var _enemy = instance_create_layer(oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), "Enemies", oEnemy);
-	show_debug_message(string(oPath_start.x)+" "+string(oPath_start.y));
+	card_draw();
 	
-	//Return to build phase
-	phase = phasetype.build; 
+	
+	if enemies_spawned < wave_count
+	{
+		if spawn_timer <= 0
+		{
+			var _enemy = instance_create_layer(oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), "Enemies", oEnemy);
+			enemies_spawned ++; 
+			spawn_timer = room_speed * 0.5; 
+		} else { spawn_timer --;}
+	} else {
+		enemies_spawned = 0; 
+		spawn_timer = room_speed * 0.5; 
+		
+		//Return to build phase
+		phase = phasetype.build; 
+	}
 }
 
 
 
 
+
+/*
+if mouse_check_button_pressed(mb_right)
+{
+	var _dead_end = false; 
+	var _x = oPath_end.x/CELL_SIZE;
+	var _y = oPath_end.y/CELL_SIZE;
+	var _prevx = 0;
+	var _prevy = 0; 
+	
+	do
+	{
+		if mp_grid_get_cell(path_grid, _x+1, _y) {_x += 1; _prevx = _x;}
+		else if mp_grid_get_cell(path_grid, _x, _y+1) {_y += 1; _prevy = _y;}
+		
+		else {_dead_end = true; }
+		
+		
+	} until(_dead_end = true); 
+		
+	mp_grid_path(path_grid, ai_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), _x*CELL_SIZE+(CELL_SIZE/2), _y*CELL_SIZE+(CELL_SIZE/2), false);
+	
+	
+	
+}
 
 
 
