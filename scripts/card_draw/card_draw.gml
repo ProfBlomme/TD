@@ -11,7 +11,7 @@ function card_draw()
 			hand[i] = instance_create_layer(x_hand[i], y_hand[i], "Instances", oCard); 
 
 			//Assign the card a random path-type 
-			hand[i].sprite_index = choose(sPath_1, sPath_2, sPath_3, sPath_4);
+			hand[i].sprite_index = choose(sPath_1);//, sPath_2, sPath_3, sPath_4);
 	
 			with(hand[i]) 
 			{

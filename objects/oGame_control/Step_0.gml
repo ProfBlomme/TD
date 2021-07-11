@@ -73,10 +73,44 @@ if card_playing == noone
 			if check_tile_placement() 
 			{
 				//Place the tile 
-				var _x = floor(mouse_x/CELL_SIZE);
-				var _y = floor(mouse_y/CELL_SIZE);
-				ds_grid_add(cell_grid, _x, _y, object_placing);
-				mp_grid_clear_cell(path_grid, _x, _y);
+				var _x = floor(mouse_x/TILE_SIZE);
+				var _y = floor(mouse_y/TILE_SIZE);
+				
+				ds_grid_add(tile_grid, _x, _y, 1);
+				
+				//Mark the cells on cell_grid
+				for(i=1; i<=9; i++) 
+				{
+					var _xx = floor(object_placing.x/CELL_SIZE);
+					var _yy = floor(object_placing.y/CELL_SIZE);
+					
+					switch(i)
+					{
+						case 2: _xx += 1; break; 
+						case 3: _xx += 2; break; 
+						case 4: _yy += 1; break;
+						case 5: _yy += 1; _xx += 1; break; 
+						case 6: _yy += 1; _xx += 2; break; 
+						case 7: _yy += 2; break;
+						case 8: _yy += 2; _xx += 1; break; 
+						case 9: _yy += 2; _xx += 2; break; 
+					}
+
+					//Cell grid info 
+					ds_grid_add(cell_grid, _xx, _yy, object_placing.cell[i]);
+
+					//Pathfinding grid
+					if object_placing.cell[i] == 1
+					{
+						mp_grid_clear_cell(path_grid, _xx, _yy);
+					}
+				}
+			
+				
+
+				
+				
+				
 				
 				//Check for connection to the path end 
 				check_path = path_add();

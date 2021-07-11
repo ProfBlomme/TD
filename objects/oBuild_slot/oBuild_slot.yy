@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sTower_Arrow",
-    "path": "sprites/sTower_Arrow/sTower_Arrow.yy",
+    "name": "sBuild_slot",
+    "path": "sprites/sBuild_slot/sBuild_slot.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,7 +28,7 @@
     "path": "folders/Objects/Cards, Towers and Tiles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oTower",
+  "name": "oBuild_slot",
   "tags": [],
   "resourceType": "GMObject",
 }
