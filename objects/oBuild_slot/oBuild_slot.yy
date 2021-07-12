@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBuild_slot",
-    "path": "sprites/sBuild_slot/sBuild_slot.yy",
+    "name": "sCell_error",
+    "path": "sprites/sCell_error/sCell_error.yy",
   },
   "solid": false,
   "visible": true,

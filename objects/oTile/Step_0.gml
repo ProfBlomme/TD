@@ -1,6 +1,6 @@
 
 
-//Update coordinates 
+//Update coordinates (Snap to tile_grid)
 if being_placed 
 {
 	x = floor(mouse_x/TILE_SIZE)*TILE_SIZE;

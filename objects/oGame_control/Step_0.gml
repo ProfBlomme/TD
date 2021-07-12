@@ -45,6 +45,19 @@ if card_playing == noone
 			object_placing.connect_up = card_playing.connect_up; 
 			object_placing.connect_down = card_playing.connect_down; 
 			
+			//Transfer the the cells to the tile 
+			object_placing.cell[1] = card_playing.cell[1]; 
+			object_placing.cell[2] = card_playing.cell[2]; 
+			object_placing.cell[3] = card_playing.cell[3]; 
+			object_placing.cell[4] = card_playing.cell[4]; 
+			object_placing.cell[5] = card_playing.cell[5]; 
+			object_placing.cell[6] = card_playing.cell[6]; 
+			object_placing.cell[7] = card_playing.cell[7]; 
+			object_placing.cell[8] = card_playing.cell[8]; 
+			object_placing.cell[9] = card_playing.cell[9]; 
+			
+			
+			
 			object_placing.sprite_index = card_playing.sprite_index; 
 			object_placing.being_placed = true; 	
 		}
@@ -100,7 +113,7 @@ if card_playing == noone
 					ds_grid_add(cell_grid, _xx, _yy, object_placing.cell[i]);
 
 					//Pathfinding grid
-					if object_placing.cell[i] == 1
+					if (object_placing.cell[i] == sCell_path)
 					{
 						mp_grid_clear_cell(path_grid, _xx, _yy);
 					}

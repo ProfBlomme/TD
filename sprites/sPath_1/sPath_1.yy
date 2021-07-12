@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Paths",
-    "path": "folders/Sprites/Paths.yy",
+    "name": "Path-types",
+    "path": "folders/Sprites/Cards/Path-types.yy",
   },
   "resourceVersion": "1.0",
   "name": "sPath_1",
