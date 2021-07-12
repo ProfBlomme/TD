@@ -10,6 +10,6 @@ if being_placed
 
 if instance_exists(target) 
 {
-	draw_line(x, y, target.x, target.y); 	
+	draw_line(x+(CELL_SIZE/2), y+(CELL_SIZE/2), target.x, target.y); 	
 }
 

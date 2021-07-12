@@ -12,6 +12,8 @@ wave_count = 5;
 enemies_spawned = 0; 
 spawn_timer = 0; 
 breakthroughs = 0; 
+ap = 3; 
+ap_remaining = ap; 
 
 card_hovering = noone; 
 card_playing = noone;

@@ -32,43 +32,47 @@ if card_playing == noone
 	//Play the hovered card 
 	if (card_hovering != noone)
 	{
+		//Check remaining actions
+		if ap_remaining >= 1
+		{
 
-		//Right click to play card as a tile
-		if mouse_check_button_pressed(mb_right)
-		{
-			card_playing = card_hovering; 
-			card_hovering = noone; 
+			//Right click to play card as a tile
+			if mouse_check_button_pressed(mb_right)
+			{
+				card_playing = card_hovering; 
+				card_hovering = noone; 
 			
-			card_playing.y -= 50; 
-			object_placing = instance_create_layer(mouse_x, mouse_y, "Instances", oTile); 
+				card_playing.y -= 50; 
+				object_placing = instance_create_layer(mouse_x, mouse_y, "Instances", oTile); 
 			
-			//Transfer the the cells to the tile 
-			object_placing.cell[1] = card_playing.cell[1]; 
-			object_placing.cell[2] = card_playing.cell[2]; 
-			object_placing.cell[3] = card_playing.cell[3]; 
-			object_placing.cell[4] = card_playing.cell[4]; 
-			object_placing.cell[5] = card_playing.cell[5]; 
-			object_placing.cell[6] = card_playing.cell[6]; 
-			object_placing.cell[7] = card_playing.cell[7]; 
-			object_placing.cell[8] = card_playing.cell[8]; 
-			object_placing.cell[9] = card_playing.cell[9]; 
+				//Transfer the the cells to the tile 
+				object_placing.cell[1] = card_playing.cell[1]; 
+				object_placing.cell[2] = card_playing.cell[2]; 
+				object_placing.cell[3] = card_playing.cell[3]; 
+				object_placing.cell[4] = card_playing.cell[4]; 
+				object_placing.cell[5] = card_playing.cell[5]; 
+				object_placing.cell[6] = card_playing.cell[6]; 
+				object_placing.cell[7] = card_playing.cell[7]; 
+				object_placing.cell[8] = card_playing.cell[8]; 
+				object_placing.cell[9] = card_playing.cell[9]; 
 			
-			object_placing.being_placed = true; 	
+				object_placing.being_placed = true; 	
 			
 			
-		//Left click to play card as a tower
-		} else if mouse_check_button_pressed(mb_left)
-		{
-			card_playing = card_hovering; 
-			card_hovering = noone; 
+			//Left click to play card as a tower
+			} else if mouse_check_button_pressed(mb_left)
+			{
+				card_playing = card_hovering; 
+				card_hovering = noone; 
 			
-			card_playing.y -= 50; 
-			object_placing = instance_create_layer(mouse_x, mouse_y, "Towers", oTower); 
+				card_playing.y -= 50; 
+				object_placing = instance_create_layer(mouse_x, mouse_y, "Towers", oTower); 
 			
-			object_placing.being_placed = true; 
+				object_placing.being_placed = true; 
+			}
+		} else {
+			show_debug_message("No actions remaining"); 	
 		}
-		
-		
 		
 		
 		
@@ -93,7 +97,6 @@ if card_playing == noone
 		if object_get_name(object_placing.object_index) == "oTile"
 		{
 
-
 			//Check the cell_grid for blocking
 			if ds_grid_get(tile_grid, floor(mouse_x/TILE_SIZE), floor(mouse_y/TILE_SIZE)) == 0
 			{
@@ -106,6 +109,8 @@ if card_playing == noone
 					var _y = floor(mouse_y/TILE_SIZE);
 				
 					ds_grid_add(tile_grid, _x, _y, object_placing);
+					
+					ap_remaining --; 
 				
 					//Mark the cells on cell_grid
 					for(i=1; i<=9; i++) 
@@ -186,16 +191,24 @@ if card_playing == noone
 			if ds_grid_get(cell_grid, _x, _y) == sCell_build
 			{
 			
-			
 				ds_grid_add(cell_grid, _x, _y, object_placing);
-			
+
+				//Clear the spot in hand
+				for(i=1; i<=5; i++)
+				{
+					if hand[i] == card_playing
+					{
+						hand[i] = noone; 
+						break; 
+					}
+				}
+				
+				ap_remaining --; 
+				
 				object_placing.being_placed = false; 
 				instance_destroy(card_playing);
-			
 				card_playing = noone; 
 				object_placing = noone;
-			
-			
 			
 			
 			} else {
@@ -211,7 +224,7 @@ if card_playing == noone
 if (phase == phasetype.invasion) 
 {
 	card_draw();
-	
+	ap_remaining = ap; 
 	
 	if enemies_spawned < wave_count
 	{
