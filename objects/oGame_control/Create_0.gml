@@ -11,6 +11,7 @@ phase = phasetype.build;
 wave_count = 5; 
 enemies_spawned = 0; 
 spawn_timer = 0; 
+breakthroughs = 0; 
 
 card_hovering = noone; 
 card_playing = noone;
@@ -62,10 +63,10 @@ for(i=1; i<=9; i++)
 }
 
 
-//Spawn the path start (Invisible) 
+//Spawn the path end
 var _pathx = (floor((room_width/2)/TILE_SIZE)*TILE_SIZE)+(CELL_SIZE); 
 var _pathy = (floor((room_height/2)/TILE_SIZE)*TILE_SIZE)-TILE_SIZE+(CELL_SIZE*2);
-instance_create_layer(_pathx, _pathy, "Instances", oPath_end);
+instance_create_layer(_pathx, _pathy, "Towers", oPath_end);
 
 ai_path = path_add();
 mp_grid_path(path_grid, ai_path, oPath_start.x+(CELL_SIZE/2)+CELL_SIZE, oPath_start.y+(CELL_SIZE/2)+CELL_SIZE, _pathx+(CELL_SIZE/2), _pathy+(CELL_SIZE/2), false);
