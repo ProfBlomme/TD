@@ -1,8 +1,5 @@
 
-
 draw_text(10, 10,"Enemies left :"+ string(instance_number(oEnemy)));
-
-
 
 draw_path(ai_path, oPath_start.x+CELL_SIZE, oPath_start.y+CELL_SIZE, true); 
 
