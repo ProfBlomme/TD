@@ -29,22 +29,15 @@ tile_grid = ds_grid_create(room_width/TILE_SIZE, room_height/TILE_SIZE);
 
 
 //Path start
-
-
-
-
 var _start = instance_create_layer((floor((room_width/2)/TILE_SIZE)*TILE_SIZE), (floor((room_height/2)/TILE_SIZE)*TILE_SIZE)-TILE_SIZE, "Instances", oPath_start);
-//ds_grid_add(tile_grid, (room_width/2)/TILE_SIZE, ((room_height/2)-(TILE_SIZE*2))/TILE_SIZE, _start);
-
-
-
+ds_grid_add(tile_grid, (room_width/2)/TILE_SIZE, ((room_height/2)-(TILE_SIZE*2))/TILE_SIZE, _start);
 
 
 //Mark the cells on cell_grid
 for(i=1; i<=9; i++) 
 {
-	var _xx = floor((room_width/2)/TILE_SIZE);
-	var _yy = floor((room_height/2)/TILE_SIZE)-1;
+	var _xx = oPath_start.x/CELL_SIZE;
+	var _yy = oPath_start.y/CELL_SIZE;
 	
 	switch(i)
 	{
@@ -62,33 +55,21 @@ for(i=1; i<=9; i++)
 	ds_grid_add(cell_grid, _xx, _yy, oPath_start.cell[i]);
 
 	//Pathfinding grid
-	if (oPath_start.cell[i] == sCell_path) //or (oPath_start.cell[i] == sCell_start) 
+	if (oPath_start.cell[i] == sCell_path) or (oPath_start.cell[i] == sCell_start) 
 	{
 		mp_grid_clear_cell(path_grid, _xx, _yy);
 	}
 }
 
 
-
-
-//mp_grid_clear_cell(path_grid, (room_width/2)/CELL_SIZE, ((room_height/2)-(CELL_SIZE*2))/CELL_SIZE);
-
-
-
-
 //Spawn the path start (Invisible) 
-instance_create_layer((room_width/2)+250, (room_height/2)-(CELL_SIZE*1), "Instances", oPath_end);
+var _pathx = (floor((room_width/2)/TILE_SIZE)*TILE_SIZE)+(CELL_SIZE); 
+var _pathy = (floor((room_height/2)/TILE_SIZE)*TILE_SIZE)-TILE_SIZE+(CELL_SIZE*2);
+instance_create_layer(_pathx, _pathy, "Instances", oPath_end);
 
-//Create the first tile 
-/*var _tile = instance_create_layer(room_width/2, (room_height/2)-(CELL_SIZE*1), "Instances", oTile); 
-_tile.sprite_index = sPath_2;
-_tile.connect_up = true; 
-_tile.connect_down = true; 
-ds_grid_add(cell_grid, (room_width/2)/CELL_SIZE, ((room_height/2)-(CELL_SIZE*1))/CELL_SIZE, _tile);
-mp_grid_clear_cell(path_grid, (room_width/2)/CELL_SIZE, ((room_height/2)-(CELL_SIZE*1))/CELL_SIZE);
-*/
 ai_path = path_add();
-mp_grid_path(path_grid, ai_path, oPath_start.x+(CELL_SIZE/2), oPath_start.y+(CELL_SIZE/2), oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), false);
+mp_grid_path(path_grid, ai_path, oPath_start.x+(CELL_SIZE/2)+CELL_SIZE, oPath_start.y+(CELL_SIZE/2)+CELL_SIZE, _pathx+(CELL_SIZE/2), _pathy+(CELL_SIZE/2), false);
+
 
 
 

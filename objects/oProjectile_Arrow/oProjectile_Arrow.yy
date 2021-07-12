@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sEnemy1",
-    "path": "sprites/sEnemy1/sEnemy1.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -27,11 +24,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Objects/Enemies.yy",
+    "name": "Projectiles",
+    "path": "folders/Objects/Projectiles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oEnemy",
+  "name": "oProjectile_Arrow",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -1,9 +1,10 @@
 {
   "resources": [
     {"id":{"name":"sCell_error","path":"sprites/sCell_error/sCell_error.yy",},"order":2,},
+    {"id":{"name":"sProjectile_arrow","path":"sprites/sProjectile_arrow/sProjectile_arrow.yy",},"order":0,},
     {"id":{"name":"sPath_3","path":"sprites/sPath_3/sPath_3.yy",},"order":2,},
     {"id":{"name":"sCell_blank","path":"sprites/sCell_blank/sCell_blank.yy",},"order":1,},
-    {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":5,},
+    {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":0,},
     {"id":{"name":"sPath_4","path":"sprites/sPath_4/sPath_4.yy",},"order":4,},
     {"id":{"name":"check_tile_placement","path":"scripts/check_tile_placement/check_tile_placement.yy",},"order":1,},
     {"id":{"name":"sBuild_slot","path":"sprites/sBuild_slot/sBuild_slot.yy",},"order":7,},
@@ -25,6 +26,7 @@
     {"id":{"name":"oBuild_slot","path":"objects/oBuild_slot/oBuild_slot.yy",},"order":6,},
     {"id":{"name":"hand_setup","path":"scripts/hand_setup/hand_setup.yy",},"order":1,},
     {"id":{"name":"sPath_start","path":"sprites/sPath_start/sPath_start.yy",},"order":5,},
+    {"id":{"name":"oProjectile_Arrow","path":"objects/oProjectile_Arrow/oProjectile_Arrow.yy",},"order":0,},
     {"id":{"name":"sEnemy1","path":"sprites/sEnemy1/sEnemy1.yy",},"order":4,},
     {"id":{"name":"sCell_start","path":"sprites/sCell_start/sCell_start.yy",},"order":4,},
     {"id":{"name":"sPath_6","path":"sprites/sPath_6/sPath_6.yy",},"order":5,},
@@ -71,6 +73,8 @@
     {"folderPath":"folders/Sprites/Towers.yy","order":6,"resourceVersion":"1.0","name":"Towers","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Cards.yy","order":8,"resourceVersion":"1.0","name":"Cards","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Cards/Path-types.yy","order":1,"resourceVersion":"1.0","name":"Path-types","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Projectiles.yy","order":9,"resourceVersion":"1.0","name":"Projectiles","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Projectiles.yy","order":9,"resourceVersion":"1.0","name":"Projectiles","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

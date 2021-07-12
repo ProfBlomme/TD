@@ -118,14 +118,14 @@ if card_playing == noone
 
 				//Check for connection to the path end 
 				check_path = path_add();
-				if mp_grid_path(path_grid, check_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), _x*CELL_SIZE+(CELL_SIZE/2), _y*CELL_SIZE+(CELL_SIZE/2), false) 
+				if mp_grid_path(path_grid, check_path, oPath_start.x+(CELL_SIZE/2)+CELL_SIZE, oPath_start.y+(CELL_SIZE/2)+CELL_SIZE, (_x*TILE_SIZE)+CELL_SIZE+(CELL_SIZE/2), (_y*TILE_SIZE)+CELL_SIZE+(CELL_SIZE/2), false) 
 				{
 
 					
-					mp_grid_path(path_grid, ai_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), _x*CELL_SIZE+(CELL_SIZE/2), _y*CELL_SIZE+(CELL_SIZE/2), false) 
+					mp_grid_path(path_grid, ai_path, oPath_start.x+(CELL_SIZE/2)+CELL_SIZE, oPath_start.y+(CELL_SIZE/2)+CELL_SIZE, (_x*TILE_SIZE)+CELL_SIZE+(CELL_SIZE/2), (_y*TILE_SIZE)+CELL_SIZE+(CELL_SIZE/2), false) 
 					show_debug_message("Connected"); 	
-					oPath_start.x = _x*CELL_SIZE; 
-					oPath_start.y = _y*CELL_SIZE; 
+					oPath_end.x = (_x*TILE_SIZE)+CELL_SIZE; 
+					oPath_end.y = (_y*TILE_SIZE)+CELL_SIZE; 
 					
 				} else { show_debug_message("Not connected"); }
 				
@@ -166,7 +166,7 @@ if (phase == phasetype.invasion)
 	{
 		if spawn_timer <= 0
 		{
-			var _enemy = instance_create_layer(oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), "Enemies", oEnemy);
+			var _enemy = instance_create_layer((oPath_start.x+CELL_SIZE)+(CELL_SIZE/2), (oPath_start.y+CELL_SIZE)+(CELL_SIZE/2), "Enemies", oEnemy);
 			enemies_spawned ++; 
 			spawn_timer = room_speed * 0.5; 
 		} else { spawn_timer --;}
