@@ -223,8 +223,11 @@ if card_playing == noone
 //Spawn invaders
 if (phase == phasetype.invasion) 
 {
+	
 	card_draw();
 	ap_remaining = ap; 
+	wave_count = level * 5; 
+	
 	
 	if enemies_spawned < wave_count
 	{
@@ -240,6 +243,7 @@ if (phase == phasetype.invasion)
 		
 		//Return to build phase
 		phase = phasetype.build; 
+		level ++; 
 	}
 }
 

@@ -14,6 +14,7 @@ spawn_timer = 0;
 breakthroughs = 0; 
 ap = 3; 
 ap_remaining = ap; 
+level = 1; 
 
 card_hovering = noone; 
 card_playing = noone;
