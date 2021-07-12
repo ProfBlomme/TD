@@ -11,27 +11,38 @@ if being_placed
 
 
 
-
-
-
-if instance_exists(oEnemy)
+var _enemy = instance_nearest(x, y, oEnemy);
+if (_enemy != noone)
 {
-	if (Firerate_timer <= 0)
-	{
-		var _projectile = instance_create_layer(x, y, "Towers", oProjectile_Arrow); 
-		_projectile.direction = point_direction(x, y, 200, 200); 
-		_projectile.speed = 1; 
-		_projectile.lifetime = room_speed * 2; 
-		_projectile.sprite_index = sProjectile_arrow;
-		
-		Firerate_timer = Firerate; 
+	if (point_distance(x, y, _enemy.x, _enemy.y) <= range) 
+	{		
+		target = _enemy; 
 	} else {
-		Firerate_timer --; 	
+		target = noone; 	
 	}
-	
 }
 
 
 
-
+if target != noone
+{
+	if instance_exists(target) 
+	{
+		if (firerate_timer <= 0)
+		{
+			var _projectile = instance_create_layer(x, y, "Towers", oProjectile_Arrow); 
+			_projectile.direction = point_direction(x, y, target.x, target.y); 
+			_projectile.speed = 2; 
+			_projectile.lifetime = room_speed * 2; 
+			_projectile.sprite_index = sProjectile_arrow;
+			_projectile.dmg = 1; 
+		
+			firerate_timer = firerate; 
+		} else {
+			firerate_timer --; 	
+		}
+	} else {
+		target = noone; 	
+	}
+}
 
