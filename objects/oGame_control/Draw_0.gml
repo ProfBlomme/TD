@@ -3,7 +3,7 @@
 draw_text(10, 10,"Enemies left :"+ string(instance_number(oEnemy)));
 
 
-/*
+
 draw_path(ai_path, oPath_end.x, oPath_end.y, true); 
 
 

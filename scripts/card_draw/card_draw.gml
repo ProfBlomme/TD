@@ -20,8 +20,6 @@ function card_draw()
 				switch(sprite_index) 
 				{
 					case sPath_1: 
-						connect_right = true; 
-						connect_left = true;
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_blank;
 						cell[3] = sCell_blank;
@@ -34,8 +32,6 @@ function card_draw()
 					break;
 					
 					case sPath_2: 
-						connect_up = true; 
-						connect_down = true; 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_path;
 						cell[3] = sCell_blank;
@@ -48,8 +44,6 @@ function card_draw()
 					break;
 					
 					case sPath_3: 
-						connect_up = true; 
-						connect_down = true; 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_path;
 						cell[3] = sCell_blank;
@@ -62,8 +56,6 @@ function card_draw()
 					break;
 					
 					case sPath_4: 
-						connect_right = true; 
-						connect_down = true; 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_blank;
 						cell[3] = sCell_blank;
@@ -76,8 +68,6 @@ function card_draw()
 					break;
 					
 					case sPath_5: 
-						connect_right = true; 
-						connect_down = true; 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_blank;
 						cell[3] = sCell_blank;
@@ -90,8 +80,6 @@ function card_draw()
 					break;					
 					
 					case sPath_6: 
-						connect_up = true; 
-						connect_left = true;
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_path;
 						cell[3] = sCell_blank;

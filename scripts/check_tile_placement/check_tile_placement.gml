@@ -1,31 +1,49 @@
 
-function check_tile_placement()
-{
 
-	var _right = ds_grid_get(cell_grid, floor(mouse_x/CELL_SIZE)+1, floor(mouse_y/CELL_SIZE));	
-	if _right != 0 
+function check_tile_placement(_x, _y)
+{
+	var _up  = ds_grid_get(tile_grid, _x, _y-1); 
+	var _down  = ds_grid_get(tile_grid, _x, _y+1); 
+	var _left  = ds_grid_get(tile_grid, _x-1, _y); 
+	var _right  = ds_grid_get(tile_grid, _x+1, _y); 
+	
+	//Check up 
+	if _up != 0
 	{
-		if _right.connect_left != object_placing.connect_right {return false; }
+		if (object_placing.cell[2] == sCell_path) or (_up.cell[8] == sCell_path)
+		{
+			if (object_placing.cell[2] != _up.cell[8]) {return false; }
+		}
 	}
-			
-	var _left = ds_grid_get(cell_grid, floor(mouse_x/CELL_SIZE)-1, floor(mouse_y/CELL_SIZE));	
-	if _left != 0 
+	
+	//Check down
+	if _down != 0
 	{
-		if _left.connect_right != object_placing.connect_left {return false; }
+		if (object_placing.cell[8] == sCell_path) or (_down.cell[2] == sCell_path)
+		{
+			if (object_placing.cell[8] != _down.cell[2]) {return false; }
+		}
 	}
-			
-	var _up = ds_grid_get(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE)-1);
-	if _up != 0 
+	
+	//Check left
+	if _left != 0
 	{
-		if _up.connect_down != object_placing.connect_up {return false; }
+		if (object_placing.cell[4] == sCell_path) or (_left.cell[6] == sCell_path)
+		{
+			if (object_placing.cell[4] != _left.cell[6]) {return false; }
+		}
 	}	
-			
-	var _down = ds_grid_get(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE)+1);
-	if _down != 0 
+	
+	//Check right
+	if _right != 0
 	{
-		if _down.connect_up != object_placing.connect_down {return false; }
-	}
-			
-	return true; 
+		if (object_placing.cell[6] == sCell_path) or (_right.cell[4] == sCell_path)
+		{
+			if (object_placing.cell[6] != _right.cell[4]) {return false; }
+		}
+	}		
+	
+	
+	return true;
 	
 }

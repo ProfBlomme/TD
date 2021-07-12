@@ -40,11 +40,6 @@ if card_playing == noone
 			card_playing.y -= 50; 
 			object_placing = instance_create_layer(mouse_x, mouse_y, "Instances", oTile); 
 			
-			object_placing.connect_right = card_playing.connect_right; 
-			object_placing.connect_left = card_playing.connect_left; 
-			object_placing.connect_up = card_playing.connect_up; 
-			object_placing.connect_down = card_playing.connect_down; 
-			
 			//Transfer the the cells to the tile 
 			object_placing.cell[1] = card_playing.cell[1]; 
 			object_placing.cell[2] = card_playing.cell[2]; 
@@ -79,17 +74,17 @@ if card_playing == noone
 	} else if mouse_check_button_pressed(mb_left) 
 	{
 		//Check the cell_grid for blocking
-		if ds_grid_get(cell_grid, floor(mouse_x/CELL_SIZE), floor(mouse_y/CELL_SIZE)) == 0
+		if ds_grid_get(tile_grid, floor(mouse_x/TILE_SIZE), floor(mouse_y/TILE_SIZE)) == 0
 		{
 			
 			//Check adjacent tiles
-			if check_tile_placement() 
+			if check_tile_placement(floor(mouse_x/TILE_SIZE), floor(mouse_y/TILE_SIZE)) 
 			{
 				//Place the tile 
 				var _x = floor(mouse_x/TILE_SIZE);
 				var _y = floor(mouse_y/TILE_SIZE);
 				
-				ds_grid_add(tile_grid, _x, _y, 1);
+				ds_grid_add(tile_grid, _x, _y, object_placing);
 				
 				//Mark the cells on cell_grid
 				for(i=1; i<=9; i++) 
@@ -121,10 +116,6 @@ if card_playing == noone
 			
 				
 
-				
-				
-				
-				
 				//Check for connection to the path end 
 				check_path = path_add();
 				if mp_grid_path(path_grid, check_path, oPath_end.x+(CELL_SIZE/2), oPath_end.y+(CELL_SIZE/2), _x*CELL_SIZE+(CELL_SIZE/2), _y*CELL_SIZE+(CELL_SIZE/2), false) 
@@ -156,12 +147,10 @@ if card_playing == noone
 				show_debug_message("Adjacent cell blocking"); 
 			}
 			
-			
 		} else {
 			show_debug_message("Cell blocked"); 
 		}
-		
-			
+
 	}	
 }
 
