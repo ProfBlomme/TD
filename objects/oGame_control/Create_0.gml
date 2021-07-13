@@ -1,4 +1,6 @@
 
+randomize();	//Randomize the game seed
+
 //Setup the phases
 enum phasetype
 {
