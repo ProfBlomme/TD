@@ -11,3 +11,4 @@ function deck_setup()
 	ds_list_shuffle(deck_list);
 	
 }
+

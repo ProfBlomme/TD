@@ -9,17 +9,18 @@ function card_draw()
 			var _card = ds_list_find_value(deck_list, 0); 
 			
 			hand[i] = instance_create_layer(x_hand[i], y_hand[i], "Instances", oCard); 
+			hand[i].sprite_index = sCard_Blank; 
 
-			//Assign the card a random path-type 
-			hand[i].sprite_index = choose(sPath_1, sPath_2, sPath_3, sPath_4, sPath_5, sPath_6);
+			//Assign the card a random path layout
+			hand[i].path_layout = choose(1, 2, 3, 4, 5, 6); 
 			
 
 			with(hand[i]) 
 			{
 				//Set cells and connection requirements based on the chosen tile sprite
-				switch(sprite_index) 
+				switch(path_layout) 
 				{
-					case sPath_1: 
+					case 1: 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_blank;
 						cell[3] = sCell_blank;
@@ -31,7 +32,7 @@ function card_draw()
 						cell[9] = sCell_blank;
 					break;
 					
-					case sPath_2: 
+					case 2: 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_path;
 						cell[3] = sCell_blank;
@@ -43,7 +44,7 @@ function card_draw()
 						cell[9] = sCell_blank;
 					break;
 					
-					case sPath_3: 
+					case 3: 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_path;
 						cell[3] = sCell_blank;
@@ -55,7 +56,7 @@ function card_draw()
 						cell[9] = sCell_blank;
 					break;
 					
-					case sPath_4: 
+					case 4: 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_blank;
 						cell[3] = sCell_blank;
@@ -67,7 +68,7 @@ function card_draw()
 						cell[9] = sCell_blank;					
 					break;
 					
-					case sPath_5: 
+					case 5: 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_blank;
 						cell[3] = sCell_blank;
@@ -79,7 +80,7 @@ function card_draw()
 						cell[9] = sCell_blank;					
 					break;					
 					
-					case sPath_6: 
+					case 6: 
 						cell[1] = sCell_blank;	//0=Empty, 1=Path, 2=Buildspot
 						cell[2] = sCell_path;
 						cell[3] = sCell_blank;

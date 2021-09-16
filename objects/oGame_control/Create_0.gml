@@ -79,6 +79,9 @@ mp_grid_path(path_grid, ai_path, oPath_start.x+(CELL_SIZE/2)+CELL_SIZE, oPath_st
 
 
 
+//Card setup 
+collection_setup(); 
+
 deck_setup(); 
 hand_setup(); 
 card_draw(); 
