@@ -20,17 +20,9 @@ draw_self();
 		else if i > 3 {_y += 15;}
 		
 		
-	
 		draw_sprite(sPath_Indicator, _ind, _x, _y);
 	}
 	
-	
-
-
-
-
-
-
 #endregion
 
 
