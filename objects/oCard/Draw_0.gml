@@ -29,6 +29,7 @@ draw_self();
 //Card text 
 draw_set_halign(fa_center); 
 draw_text(x+(sprite_width/2), y, card_title); 
+draw_text(x+(sprite_width/2), y+16, "ID: "+string(card_id)); 
 
 
 //Reset 

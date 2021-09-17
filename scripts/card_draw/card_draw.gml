@@ -10,6 +10,9 @@ function card_draw()
 			
 			hand[i] = instance_create_layer(x_hand[i], y_hand[i], "Instances", oCard); 
 			hand[i].sprite_index = sCard_Blank; 
+			hand[i].card_id = _card; 
+			
+			
 
 			//Assign the card a random path layout
 			hand[i].path_layout = choose(1, 2, 3, 4, 5, 6); 
