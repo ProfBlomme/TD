@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Cards",
+    "path": "folders/Sprites/Cards.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCard_Blank",

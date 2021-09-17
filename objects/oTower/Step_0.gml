@@ -31,10 +31,10 @@ if being_placed
 			if (firerate_timer <= 0)
 			{
 				var _projectile = instance_create_layer(x+(CELL_SIZE/2), y+(CELL_SIZE/2), "Towers", oProjectile_Arrow); 
-				_projectile.direction = point_direction(x+(CELL_SIZE/2), y+(CELL_SIZE/2), target.x, target.y); 
-				_projectile.speed = 2; 
-				_projectile.lifetime = room_speed * 2; 
 				_projectile.sprite_index = sProjectile_arrow;
+				_projectile.direction = point_direction(x+(CELL_SIZE/2), y+(CELL_SIZE/2), target.x, target.y); 
+				_projectile.speed = 1.4; 
+				_projectile.lifetime = room_speed * 2; 
 				_projectile.dmg = 1; 
 		
 				firerate_timer = firerate; 

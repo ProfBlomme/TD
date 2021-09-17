@@ -66,7 +66,9 @@ if card_playing == noone
 				card_hovering = noone; 
 			
 				card_playing.y -= 50; 
-				object_placing = instance_create_layer(mouse_x, mouse_y, "Towers", oTower); 
+				var _type = asset_get_index(global.card_database[# 2, card_playing.card_id]);
+				
+				object_placing = instance_create_layer(mouse_x, mouse_y, "Towers", _type); 
 
 				
 				
@@ -166,6 +168,8 @@ if card_playing == noone
 							break; 
 						}
 					}
+					
+					ds_list_add(discard_list, card_playing.card_id);	//Add to discard pile
 			
 					object_placing.being_placed = false; 
 					instance_destroy(card_playing);
@@ -184,7 +188,7 @@ if card_playing == noone
 			
 			
 			
-		} else if object_get_name(object_placing.object_index) == "oTower"
+		} else if object_get_name(object_placing.object_index) == "oTower" or object_get_name(object_placing.object_index) == "oTower_Canon"
 		{
 			
 			//Check the cell_grid for blocking
@@ -208,6 +212,8 @@ if card_playing == noone
 				}
 				
 				ap_remaining --; 
+				
+				ds_list_add(discard_list, card_playing.card_id);	//Add to discard pile
 				
 				object_placing.being_placed = false; 
 				instance_destroy(card_playing);

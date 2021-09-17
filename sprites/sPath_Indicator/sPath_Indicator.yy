@@ -77,8 +77,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Path-types",
-    "path": "folders/Sprites/Cards/Path-types.yy",
+    "name": "Cards",
+    "path": "folders/Sprites/Cards.yy",
   },
   "resourceVersion": "1.0",
   "name": "sPath_Indicator",

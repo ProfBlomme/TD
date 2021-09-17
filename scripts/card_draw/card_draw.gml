@@ -12,7 +12,7 @@ function card_draw()
 			hand[i].sprite_index = sCard_Blank; 
 			hand[i].card_id = _id; 
 			
-			
+			hand[i].card_title = global.card_database[# 1, _id]; 
 			hand[i].range = global.card_database[# 3, _id];
 			
 			
