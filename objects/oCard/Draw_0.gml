@@ -32,5 +32,10 @@ draw_text(x+(sprite_width/2), y, card_title);
 draw_text(x+(sprite_width/2), y+16, "ID: "+string(card_id)); 
 
 
+
+
+
+draw_text(x+(sprite_width/2), y+32, string(range)); 
+
 //Reset 
 draw_set_halign(fa_left); 

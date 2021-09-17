@@ -67,6 +67,10 @@ if card_playing == noone
 			
 				card_playing.y -= 50; 
 				object_placing = instance_create_layer(mouse_x, mouse_y, "Towers", oTower); 
+
+				
+				
+				
 			
 				object_placing.being_placed = true; 
 			}

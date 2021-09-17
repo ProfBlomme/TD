@@ -6,11 +6,15 @@ function card_draw()
 	{
 		if hand[i] = noone 
 		{
-			var _card = ds_list_find_value(deck_list, 0); 
+			var _id = ds_list_find_value(deck_list, 0); 
 			
 			hand[i] = instance_create_layer(x_hand[i], y_hand[i], "Instances", oCard); 
 			hand[i].sprite_index = sCard_Blank; 
-			hand[i].card_id = _card; 
+			hand[i].card_id = _id; 
+			
+			
+			hand[i].range = global.card_database[# 3, _id];
+			
 			
 			
 
