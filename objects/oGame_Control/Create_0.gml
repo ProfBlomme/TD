@@ -12,7 +12,7 @@ for (var i = 0; i < _w; i++;)
         {	
 			
 		var map_id = layer_tilemap_get_id("Tiles_Path");
-        if tilemap_get_at_pixel(map_id, (i * CELL_SIZE) + (CELL_SIZE / 2), (j * CELL_SIZE) + (CELL_SIZE / 2)) = 1
+        if tilemap_get_at_pixel(map_id, (i * CELL_SIZE) + (CELL_SIZE / 2), (j * CELL_SIZE) + (CELL_SIZE / 2)) == 1
             {
 				mp_grid_add_cell(building_grid, i, j);
             }
