@@ -1,5 +1,16 @@
 {
   "resources": [
+    {"id":{"name":"sPath_Start","path":"sprites/sPath_Start/sPath_Start.yy",},"order":2,},
+    {"id":{"name":"sTileset_Path","path":"sprites/sTileset_Path/sTileset_Path.yy",},"order":1,},
+    {"id":{"name":"sEnemy","path":"sprites/sEnemy/sEnemy.yy",},"order":4,},
+    {"id":{"name":"oPath_End","path":"objects/oPath_End/oPath_End.yy",},"order":2,},
+    {"id":{"name":"oPath_Start","path":"objects/oPath_Start/oPath_Start.yy",},"order":1,},
+    {"id":{"name":"sPath_End","path":"sprites/sPath_End/sPath_End.yy",},"order":3,},
+    {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":3,},
+    {"id":{"name":"oSystem_Control","path":"objects/oSystem_Control/oSystem_Control.yy",},"order":0,},
+    {"id":{"name":"Tileset_Path","path":"tilesets/Tileset_Path/Tileset_Path.yy",},"order":1,},
+    {"id":{"name":"sTileset_Basic","path":"sprites/sTileset_Basic/sTileset_Basic.yy",},"order":0,},
+    {"id":{"name":"Tileset_Basic","path":"tilesets/Tileset_Basic/Tileset_Basic.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -34,6 +45,7 @@
     {"folderPath":"folders/Animation Curves.yy","order":12,"resourceVersion":"1.0","name":"Animation Curves","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Notes.yy","order":13,"resourceVersion":"1.0","name":"Notes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Tilesets.yy","order":1,"resourceVersion":"1.0","name":"Tilesets","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
