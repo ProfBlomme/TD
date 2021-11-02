@@ -6,7 +6,7 @@ if keyboard_check_pressed(vk_escape)
 
 if keyboard_check_pressed(vk_enter)
 {
-	instance_create_layer(oPath_Start.x, oPath_Start.y, "Instances", oEnemy); 	
+	instance_create_layer(oPath_Start.x+16, oPath_Start.y+16, "Instances", oEnemy); 	
 }
 
 

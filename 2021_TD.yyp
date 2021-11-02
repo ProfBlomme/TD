@@ -8,6 +8,7 @@
     {"id":{"name":"sPath_End","path":"sprites/sPath_End/sPath_End.yy",},"order":3,},
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":3,},
     {"id":{"name":"oSystem_Control","path":"objects/oSystem_Control/oSystem_Control.yy",},"order":0,},
+    {"id":{"name":"oGame_Control","path":"objects/oGame_Control/oGame_Control.yy",},"order":4,},
     {"id":{"name":"Tileset_Path","path":"tilesets/Tileset_Path/Tileset_Path.yy",},"order":1,},
     {"id":{"name":"sTileset_Basic","path":"sprites/sTileset_Basic/sTileset_Basic.yy",},"order":0,},
     {"id":{"name":"Tileset_Basic","path":"tilesets/Tileset_Basic/Tileset_Basic.yy",},"order":0,},
