@@ -1,1 +1,1 @@
-path_start(oPath_Start.path_enemy, 3, 0, 0);
+path_start(oPath_Start.path_enemy, 3, 0, true);
