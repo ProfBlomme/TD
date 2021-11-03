@@ -24,6 +24,7 @@ if target != noone
 						damage = _dmg 
 						speed = 2; 
 						direction = _dir; 
+						image_angle = direction; 
 					}
 	
 					fire_cd = firerate; 
