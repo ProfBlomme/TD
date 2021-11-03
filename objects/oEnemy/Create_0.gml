@@ -1,6 +1,7 @@
 
 move_speed = 1; 
-
+hpmax = 1; 
+hp = hpmax; 
 
 
 
