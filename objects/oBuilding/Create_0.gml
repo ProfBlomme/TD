@@ -8,3 +8,4 @@ damage = 1;
 firerate = room_speed * 0.5; 
 fire_cd = 0; 
 
+active = false; 

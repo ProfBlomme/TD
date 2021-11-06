@@ -25,7 +25,7 @@ for (var i = 0; i < _w; i++;)
 
 gold = 10; 
 
-
+object_placing = noone; 
 
 
 
