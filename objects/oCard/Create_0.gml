@@ -4,7 +4,7 @@
 building_id = oTower_Arrow; //Skiftes til script med card effect? 
 
 
-
+being_hovered = false; 
 
 
 

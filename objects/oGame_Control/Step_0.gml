@@ -1,11 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+if global.pause {exit;}
 
 
 //IF Idle ? 
 if object_placing = noone
 {
+
 	if mouse_check_button_pressed(mb_left) 
 	{
 		var _card = instance_position(mouse_x, mouse_y, oCard)
@@ -18,8 +19,6 @@ if object_placing = noone
 			object_placing = instance_create_layer(_x, _y, "Instances", _card.building_id); 	
 
 		}
-	
-
 	
 	}
 }

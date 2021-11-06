@@ -3,7 +3,7 @@
     {"id":{"name":"sPath_Start","path":"sprites/sPath_Start/sPath_Start.yy",},"order":2,},
     {"id":{"name":"system_initialization","path":"scripts/system_initialization/system_initialization.yy",},"order":0,},
     {"id":{"name":"oProjectile","path":"objects/oProjectile/oProjectile.yy",},"order":6,},
-    {"id":{"name":"oTower_Arrow","path":"objects/oTower_Arrow/oTower_Arrow.yy",},"order":5,},
+    {"id":{"name":"oTower_Arrow","path":"objects/oTower_Arrow/oTower_Arrow.yy",},"order":0,},
     {"id":{"name":"sTileset_Path","path":"sprites/sTileset_Path/sTileset_Path.yy",},"order":1,},
     {"id":{"name":"sEnemy","path":"sprites/sEnemy/sEnemy.yy",},"order":4,},
     {"id":{"name":"oPath_End","path":"objects/oPath_End/oPath_End.yy",},"order":2,},
@@ -21,7 +21,7 @@
     {"id":{"name":"Tileset_Path","path":"tilesets/Tileset_Path/Tileset_Path.yy",},"order":1,},
     {"id":{"name":"sTileset_Basic","path":"sprites/sTileset_Basic/sTileset_Basic.yy",},"order":0,},
     {"id":{"name":"Tileset_Basic","path":"tilesets/Tileset_Basic/Tileset_Basic.yy",},"order":0,},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
+    {"id":{"name":"Map1","path":"rooms/Map1/Map1.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
@@ -38,7 +38,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Map1","path":"rooms/Map1/Map1.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -57,6 +57,7 @@
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Tilesets.yy","order":1,"resourceVersion":"1.0","name":"Tilesets","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/Map 1 Scripts.yy","order":1,"resourceVersion":"1.0","name":"Map 1 Scripts","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Towers.yy","order":8,"resourceVersion":"1.0","name":"Towers","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

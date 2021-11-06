@@ -20,8 +20,8 @@ for (var i = 0; i < _w; i++;)
     }
 
 
-
-
+tooltip_timer_set = room_speed * 0.3; 
+tooltip_timer = tooltip_timer_set; 
 
 gold = 10; 
 
@@ -29,5 +29,5 @@ object_placing = noone;
 
 
 wave_current = 0; 
-
+wave_max = 10; 
 

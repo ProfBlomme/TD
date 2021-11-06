@@ -30,7 +30,6 @@ if active = true
 	
 						fire_cd = firerate; 
 		
-		
 				} else {
 					fire_cd --; 
 	
