@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sTower_Test",
-    "path": "sprites/sTower_Test/sTower_Test.yy",
+    "name": "sTower_Arrow",
+    "path": "sprites/sTower_Arrow/sTower_Arrow.yy",
   },
   "solid": false,
   "visible": true,
@@ -32,7 +32,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBuilding",
+  "name": "oTower_Arrow",
   "tags": [],
   "resourceType": "GMObject",
 }

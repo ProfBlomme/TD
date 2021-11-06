@@ -30,8 +30,9 @@ path_enemy = path_add();
 mp_grid_path(path_grid, path_enemy, oPath_Start.x+(CELL_SIZE / 2), oPath_Start.y+(CELL_SIZE / 2), oPath_End.x+(CELL_SIZE / 2), oPath_End.y+(CELL_SIZE / 2), false); 
 
 
-
-
+spawn_wave = false; 
+wavespawn_timer_set = room_speed * 0.3;
+wavespawn_timer = 0; 
 
 
 

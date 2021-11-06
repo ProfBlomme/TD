@@ -28,5 +28,6 @@ gold = 10;
 object_placing = noone; 
 
 
+wave_current = 0; 
 
 

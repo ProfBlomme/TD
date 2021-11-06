@@ -41,10 +41,14 @@ else if object_placing != noone
 	{
 		if mp_grid_get_cell(oGame_Control.building_grid, _x / CELL_SIZE, _y / CELL_SIZE) == 0
 		{
-			object_placing.active = true; 
-			object_placing = noone; 
+			if gold >= object_placing.cost 
+			{
+				gold -= object_placing.cost; 
+				object_placing.active = true; 
+				object_placing = noone; 
 			
-			mp_grid_add_cell(oGame_Control.building_grid, _x / CELL_SIZE, _y / CELL_SIZE); 
+				mp_grid_add_cell(oGame_Control.building_grid, _x / CELL_SIZE, _y / CELL_SIZE); 
+			} else { show_debug_message("Not enough gold"); }
 			
 		} else { show_debug_message("Space occupied"); }
 		
@@ -56,8 +60,11 @@ else if object_placing != noone
 
 
 
-
-
+//Spawn wave of enemies
+if keyboard_check_pressed(vk_enter)
+{
+	wave_execute(); 
+}
 
 
 
