@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+
 draw_self();
 
 if being_hovered 
@@ -25,9 +27,16 @@ if being_hovered
 	
 	
 //Draw the tooltip text
-	draw_text(_tt_x + 2, _tt_y + 2, string(building_id)); 
+	draw_text(_tt_x + 2, _tt_y + 2, card_name); 
+	draw_text(_tt_x + 2, _tt_y + 2 + 15, "Cost: "+string(card_cost)); 
+	draw_text(_tt_x + 2, _tt_y + 2 + 30, "Damage: "+string(card_damage)); 
+	draw_text(_tt_x + 2, _tt_y + 2 + 45, "Card: "+string(card_num)); 
 	
 	
 	#endregion
 }
+
+
+
+
 

@@ -9,7 +9,7 @@ if object_placing = noone
 
 	if mouse_check_button_pressed(mb_left) 
 	{
-		var _card = instance_position(mouse_x, mouse_y, oCard)
+		var _card = instance_position(mouse_x, mouse_y, oCard_Part)
 	
 		if _card != noone 
 		{

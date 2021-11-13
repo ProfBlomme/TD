@@ -31,3 +31,25 @@ object_placing = noone;
 wave_current = 0; 
 wave_max = 10; 
 
+
+//Setup hand 
+hand_size = 5; 
+for(i=1; i<=hand_size; i++)
+{
+	hand[i] = noone; 
+}
+
+//Draw opening hand 
+var _x_offset = 150;  
+for(i=1; i<(hand_size+1); i++)
+{
+	if (hand[i] == noone) 
+	{
+		hand[i] = instance_create_layer(50 + (i * _x_offset), 600, "Instances", oCard); 
+		with(hand[i]) 
+		{
+			card_cost = random_range(0, 3); 
+		}
+	}
+}
+

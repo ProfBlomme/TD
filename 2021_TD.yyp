@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"sPath_Start","path":"sprites/sPath_Start/sPath_Start.yy",},"order":2,},
     {"id":{"name":"system_initialization","path":"scripts/system_initialization/system_initialization.yy",},"order":0,},
+    {"id":{"name":"oCard_Part","path":"objects/oCard_Part/oCard_Part.yy",},"order":9,},
     {"id":{"name":"oProjectile","path":"objects/oProjectile/oProjectile.yy",},"order":6,},
     {"id":{"name":"oTower_Arrow","path":"objects/oTower_Arrow/oTower_Arrow.yy",},"order":0,},
     {"id":{"name":"sTileset_Path","path":"sprites/sTileset_Path/sTileset_Path.yy",},"order":1,},
@@ -16,6 +17,7 @@
     {"id":{"name":"sPath_End","path":"sprites/sPath_End/sPath_End.yy",},"order":3,},
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":3,},
     {"id":{"name":"oCard","path":"objects/oCard/oCard.yy",},"order":7,},
+    {"id":{"name":"sCardframe_Test","path":"sprites/sCardframe_Test/sCardframe_Test.yy",},"order":9,},
     {"id":{"name":"oSystem_Control","path":"objects/oSystem_Control/oSystem_Control.yy",},"order":0,},
     {"id":{"name":"oGame_Control","path":"objects/oGame_Control/oGame_Control.yy",},"order":4,},
     {"id":{"name":"Tileset_Path","path":"tilesets/Tileset_Path/Tileset_Path.yy",},"order":1,},
