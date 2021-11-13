@@ -13,10 +13,12 @@ if object_placing = noone
 	
 		if _card != noone 
 		{
+
 			var _x = floor(mouse_x/CELL_SIZE) * CELL_SIZE; 
 			var _y = floor(mouse_y/CELL_SIZE) * CELL_SIZE; 
 		
 			object_placing = instance_create_layer(_x, _y, "Instances", _card.building_id); 	
+			card_being_played = _card.owner; 
 
 		}
 	
@@ -47,6 +49,13 @@ else if object_placing != noone
 				object_placing = noone; 
 			
 				mp_grid_add_cell(oGame_Control.building_grid, _x / CELL_SIZE, _y / CELL_SIZE); 
+				
+				instance_destroy(card_being_played);
+				card_being_played = noone; 
+				
+				
+				
+				
 			} else { show_debug_message("Not enough gold"); }
 			
 		} else { show_debug_message("Space occupied"); }

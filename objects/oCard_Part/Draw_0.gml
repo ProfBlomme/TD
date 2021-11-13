@@ -32,7 +32,6 @@ if being_hovered
 	draw_text(_tt_x + 2, _tt_y + 2 + 30, "Damage: "+string(card_damage)); 
 	draw_text(_tt_x + 2, _tt_y + 2 + 45, "Card: "+string(card_num)); 
 	
-	
 	#endregion
 }
 
